@@ -1,15 +1,13 @@
-import React, { Component } from 'react'
+import React from 'react'
 
-export default class ImageItem extends Component {
+export default class ImageItem extends React.Component {
     render() {
         return (
-            <li
-                className="HornedAnimal">
-                <p>{this.props.images.url}</p>
-                <p>{this.props.images.title}</p>
-                <p>{this.props.images.description}</p>
-                <p>{this.props.images.keyword}</p>
-                <p>${this.props.images.horns}</p>
+            <li className="AnimalsList"><img alt="animal" src={this.props.image.url} />
+                <p>Title:{this.props.image.title}</p>
+                <p>Description:{this.props.image.description}
+                </p><p>Keyword:{this.props.image.keyword}</p>
+                <p>Number of Horns:{this.props.image.horns}</p>
             </li>
         )
     }
