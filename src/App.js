@@ -2,17 +2,17 @@ import React from 'react'
 import './App.css';
 import Header from './Components/Header.js';
 import images from './data.js';
-// import ImageItem from './Components/ImageItem.js';
 import ImageList from './Components/ImageList.js';
 import Dropdown from './Components/Dropdown.js';
 
 
 export default class App extends React.Component {
+  //Setting state
   state = {
     keyword: '',
     horns: '',
   }
-
+  // tracking state changes
   handleKeywordChange = (e) => {
 
     this.setState({
@@ -27,7 +27,7 @@ export default class App extends React.Component {
   }
 
   render() {
-    console.log(this.state)
+    // Setting conditions for filter and what to display based on user input.
     const filteredImages = images.filter((image) => {
 
       if (!this.state.keyword && !this.state.horns) return true;
@@ -46,12 +46,7 @@ export default class App extends React.Component {
       }
       return false;
     });
-
-    // const imageNodes = filteredImages.map(image => <ImageItem
-    //   key={image.title}
-    //   image={image} />);
-
-
+    //Rendering the components created on the page.
     return (
       <>
         <Header />
@@ -62,40 +57,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-
-
-
-
-/* <form>
-  Choose a creature
-  <select
-    id={this.state.horns}
-    onChange={this.handleHornsChange}>
-    <option id="1" >1</option>
-    <option id="2" >2</option>
-    <option id="3" >3</option>
-    <option id="100" >100</option></select>
-  <select value={this.state.title}
-    onChange={this.handleKeywordChange}>
-    <option value=''></option>
-    <option value='narwhal'>Narwhal</option>
-    <option value='rhino'>Rhino</option>
-    <option value='unicorn'>Unicorn</option>
-    <option value='unilego'>Unilego</option>
-    <option value='triceratops'>Triceratops</option>
-    <option value='markhor'>Markhor</option>
-    <option value='mouflon'>Mouflon</option>
-    <option value='addax'>Addax</option>
-    <option value='lizard'>Lizard</option>
-    <option value='dragon'>Dragon</option>
-    <option value='chameleon'>Chameleon</option>
-  </select>
-</form>
-<ul>
-  {imageNodes}
-</ul>
-</main>
-)
-}
-} */
