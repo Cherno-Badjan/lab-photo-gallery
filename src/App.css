@@ -40,10 +40,25 @@
 img{
   height:200px;
   width:200px;
-  justify-content: center;
-  align-items: center;
+  border-radius: 50%;
+}
+.images{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 15px;
+  text-align: center;
 }
 
 h1{
   text-align: center;
+  font-family:'Fredericka the Great', cursive;
+}
+
+
+li {
+  list-style: none;
+}
+
+body{
+  background-image: url(https://wallpaperaccess.com/full/3137230.jpg);
 }
